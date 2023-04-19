@@ -8,7 +8,7 @@ Skills used in the project and their usage in the industry are given below:
 •	Ganache Blockchain - It is a tool for creating a private Ethereum blockchain on which Solidity contracts can be tested.
 •	Truffle - Truffle is a world-class development environment, testing framework and asset pipeline for blockchains using the Ethereum Virtual Machine (EVM)
 
-Problem Statement:
+
 
 The election is a fundamental pillar of a democratic system, which enables the public to express their views in the form of a vote. Due to their significance in our society, the election process should be transparent and reliable to ensure participants of its credibility.
 Online voting is a trend that is gaining momentum in modern society. It has great potential to decrease organizational costs and increase voter turnout. It eliminates the need to print ballot papers or open polling stations—voters can vote from wherever there is an Internet connection. Despite these benefits, online voting solutions are viewed with a great deal of caution because of:

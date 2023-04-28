@@ -86,7 +86,7 @@ contract Election {
         ●	Proposal 🡪 Election promise of the candidate
         ●	Name 🡪 Name of the candidate**/
 
-    function displayCandidate(uint _id) public view returns (uint, string memory, string memory, uint) {
+    function displayCandidate(uint _id) public view returns (uint id, string memory name, string memory proposal, uint voteCount) {
         require(_id > 0 && _id <= candidatesCount, "Invalid candidate ID");
 
         Candidate memory candidate = candidates[_id];
@@ -133,9 +133,9 @@ contract Election {
          ●	Candidate ID
          ●	Votes secured**/
     
-    function showWinner() public view returns (string memory, uint, uint) {
-         uint winningCandidateId;
-         uint voteCount;
+    function showWinner() public view returns (string memory name, uint winningCandidateId, uint voteCount) {
+        //  uint winningCandidateId;
+        //  uint voteCount;
 
          for (uint i = 1; i <= candidatesCount; i++) {
             if (candidates[i].voteCount > voteCount) {
@@ -154,7 +154,7 @@ contract Election {
            ●	Candidate name
            ●	Number of votes received**/
 
-    function showResult(uint _candidateId) public view returns (uint, string memory, uint) {
+    function showResult(uint _candidateId) public view returns (uint id, string memory name, uint voteCount) {
          require(checkstate == State.FINISHED, "Election is not yet completed.");
          require(_candidateId > 0 && _candidateId <= candidatesCount, "Invalid candidate ID.");
 
@@ -162,12 +162,12 @@ contract Election {
     }
      
       // view candidate count 
-    function candidate_Count() public view returns (uint) {
+    function candidate_Count() public view returns (uint candiateCount) {
     return candidatesCount;
     }
 
       //view voters count
-    function voter_Count() public view returns (uint) {
+    function voter_Count() public view returns (uint voterscount) {
     return votersCount;
     }
 
@@ -188,7 +188,7 @@ contract Election {
 
        // This function is used to view voter . it takes delegate address and voters address
 
-    function getVoter() public view returns (address, address) {
+    function getVoter() public view returns (address voteraddress, address delegateaddress) {
          address voterAddress = msg.sender;
          address delegateAddress = voter[voterAddress].delegate;
     return (voterAddress, delegateAddress);
